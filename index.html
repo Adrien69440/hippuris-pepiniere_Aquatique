@@ -11,35 +11,102 @@
         <nav>
             <div class="nav-bar">
                 <a href="index.html" class="logo">
-                    <img class="logo-nav" src="image/logo/logo_hippuris.png" alt="Logo Hippuris Pépinière Aquatique">
+                    <img class="logo-nav" src="./image/logo/logo_hippuris.png" alt="Logo Hippuris Pépinière Aquatique">
                 </a>
                 <ul class="tabs_container">
-                    <li class="bar-left"><a class="tabs_activite tabs_item" href="#">Nénuphar</a></li>
-                    <li class="bar-left"><a class="tabs_activite tabs_item" href="#">Plante de berges</a></li>
-                    <li class="bar-left"><a class="tabs_activite tabs_item" href="pages/presentation.html">Qui sommes-nous ?</a></li>
-                    <li class="bar-left"><a class="tabs_activite tabs_item" href="#">Plante vivaces</a></li>
-                    <li class="bar-left"><a class="tabs_activite tabs_item" href="#">Arbustes</a></li>
-                    <li class="bar-left"><a class="tabs_activite tabs_item" href="/pages/conseil.html">Conseil bassin</a></li>
+                    <li class="bar-left dropdown">
+                        <a class="tabs_activite tabs_item" href="#">Nénuphar</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Catégorie 1</a></li>
+                            <li><a href="#">Catégorie 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="bar-left dropdown">
+                        <a class="tabs_activite tabs_item" href="#">Plante de berges</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Catégorie 1</a></li>
+                            <li><a href="#">Catégorie 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="bar-left">
+                        <a class="tabs_activite tabs_item" href="pages/presentation.html">Qui sommes-nous ?</a>
+                    </li>
+                    <li class="bar-left">
+                        <a class="tabs_activite tabs_item" href="#">Plante vivaces</a>
+                    </li>
+                    <li class="bar-left">
+                        <a class="tabs_activite tabs_item" href="#">Arbustes</a>
+                    </li>
+                    <li class="bar-left">
+                        <a class="tabs_activite tabs_item" href="/pages/conseil.html">Conseil bassin</a>
+                    </li>
                 </ul>
+                <button class="burger-menu" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
     </header>
-   <div><h1>Une équipe à votre écoute</h1></div>
-   <main class="carousel_position">
-    <section>
-        <div class="carousel-container">
-            <div id="carousel-items" class="carousel-items"></div>
-            <div id="carousel-indicators" class="carousel-indicators"></div>
-            <button id="prev-btn">Prev</button>
-            <button id="next-btn">Next</button>
-          </div>
-    </section>
-
-
+    
+    <div class="main_title">
+       <H1> Une équipe à votre écoute  <span> <a href="#">06 30 35 73 91</a></H1></span>
+    </div>
+    
+    <main class="carousel_position">
+        <section>
+            <div class="carousel-container">
+                <div id="carousel-items" class="carousel-items"></div>
+                <div id="carousel-indicators" class="carousel-indicators"></div>
+                <button id="prev-btn">Prev</button>
+                <button id="next-btn">Next</button>
+            </div>
+        </section>
     </main>
     
-    <footer>
-        <!-- Footer content -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Section Informations -->
+            <div class="footer-section">
+                <h3>Hippuris Pépinière Aquatique</h3>
+                <p>Adresse : 123 Rue des Plantes Aquatiques, 75000 Paris, France</p>
+                <p>Téléphone : <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+                <p>Email : <a href="mailto:contact@hippuris.com">contact@hippuris.com</a></p>
+            </div>
+
+            <!-- Section Liens utiles -->
+            <div class="footer-section">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pages/presentation.html">Qui sommes-nous ?</a></li>
+                    <li><a href="pages/conseil.html">Conseils Bassin</a></li>
+                    <li><a href="#">Conditions Générales de Vente</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <!-- Section Réseaux sociaux -->
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Section Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hippuris Pépinière Aquatique - Tous droits réservés.</p>
+        </div>
     </footer>
 
     <script src="./js/componements/carousel.js"></script>

@@ -22,57 +22,117 @@ display: flex;
 }
 
 /* Début de barre de navigation */
-.nav-bar{
-	display: flex;
-    justify-content:flex-start;
-	background-color: white;
-	border-bottom: grey solid 3px;
-	margin: 0;
-	padding: 0;
+/* Navigation bar styling */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 3px solid grey;
+    padding: 0 20px;
 }
-
 .logo-nav{
-	background-color: #f0BAD8C2;
-	width: 20em;
-	height: 11em;
-	margin: 0;
-	padding: 0;
-	border-radius: 0px 65px 0px 65px;
+	background-color: #8d8d90;
+}
+.tabs_container {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-.tabs_container
-{
-	display: flex;
-	justify-content: space-between;
-	text-align: center;
-	list-style: none;
-	gap: 4.25rem; 
-	padding-bottom: 0%;
-	padding-left: 0;
-	margin: 0;
-	width: 95%;
-	font-size: 22px;
-	
-}
-/* effet de survol barre du haut hébergement et activités textes à l'intérieur */ 
-.bar-right:hover,.bar-left:hover
-{
-	border-top: #f0BAD8C2 3px solid;
-	color: #f0BAD8C2;
-	/* border: transparent 2px solid; */
+.tabs_item {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-/* permet de regler l'eloignement de la barre entre le texte et la marge supérieur */
-.bar-left
-{
-	width: 100%;
-	padding-top: 15px;
+.tabs_item:hover,
+.tabs_item:focus {
+    color: #f0BAD8C2;
+    border-bottom: 3px solid #f0BAD8C2;
 }
-.bar-right
-{
-   width: 100%;
-   padding-top: 15px;
+
+.bar-left {
+    position: relative;
+    padding: 10px 0;
 }
+
+/* Dropdown menu */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.dropdown-menu li a:hover {
+    background: #f0BAD8C2;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Responsive Menu - Burger */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tabs_container {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .tabs_container.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+}
+
 
 /* style pour pages de présentation */
 
@@ -138,7 +198,89 @@ transition: transform 0.3s ease-in-out;
 
 /****Fin barre de navigation****/
 
-/* Fin de barre de navigation */
+/* ***Debut footer */
+/* Footer Styling */
+.footer {
+    background-color: #3c4858; /* Couleur principale du footer */
+    color: #ffffff; /* Texte en blanc */
+    padding: 40px 20px;
+    font-family: "Raleway", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 30%;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0BAD8C2;
+    padding-bottom: 5px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #f0BAD8C2; /* Couleur d'accentuation */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f0BAD8C2;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #f0BAD8C2;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+
+/* ***Fin footer */
 
 /* .card 
 {
@@ -244,6 +386,12 @@ button:hover
 h3 {
 font-size: 45px;
 text-align: center;
+}
+/* ****************************************************PAGE INDEX******************************************************************************** */
+/* STYLE TITRE H1 */
+.main_title{
+text-align: center;
+font-size: 1.5rem;
 }
 
 /* style pour le carroussel index.html */

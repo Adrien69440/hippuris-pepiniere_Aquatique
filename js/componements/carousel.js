@@ -1,5 +1,5 @@
 const data = [
-  { id: 1, url: 'https://picsum.photos/800/400?random=1', alt: 'Image 1', tagline: 'Tagline for Image 1' },
+  { id: 1, url: 'https://picsum.photos/800/400?random=1', alt: 'Image 1', tagline: 'hello world' },
   { id: 2, url: 'https://picsum.photos/800/400?random=2', alt: 'Image 2', tagline: 'Tagline for Image 2' },
   { id: 3, url: 'https://picsum.photos/800/400?random=3', alt: 'Image 3', tagline: 'Tagline for Image 3' },
   { id: 4, url: 'https://picsum.photos/800/400?random=4', alt: 'Image 4', tagline: 'Tagline for Image 4' },
