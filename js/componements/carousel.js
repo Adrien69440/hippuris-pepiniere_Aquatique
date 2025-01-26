@@ -3,60 +3,56 @@ const data = [
   { id: 2, url: 'https://picsum.photos/800/400?random=2', alt: 'Image 2', tagline: 'Tagline for Image 2' },
   { id: 3, url: 'https://picsum.photos/800/400?random=3', alt: 'Image 3', tagline: 'Tagline for Image 3' },
   { id: 4, url: 'https://picsum.photos/800/400?random=4', alt: 'Image 4', tagline: 'Tagline for Image 4' },
-  { id: 5, url: 'https://picsum.photos/800/400?random=5', alt: 'Image 5', tagline: 'Tagline for Image 5' },
+  { id: 5, url: 'https://picsum.photos/800/400?random=5', alt: 'Image 5', tagline: 'Tagline for Image 5' }
 ];
 
-const carouselItemsContainer = document.getElementById('carousel-items');
-const indicatorsContainer = document.getElementById('carousel-indicators');
+// Sélecteurs
+const carouselImage = document.getElementById('carousel-image');
+const carouselTagline = document.getElementById('carousel-tagline');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
+const dotsContainer = document.getElementById('dots-container');
 
 let currentIndex = 0;
 
-// Crée les items et les indicateurs du carrousel
-data.forEach((item, index) => {
-  const carouselItem = document.createElement('div');
-  carouselItem.classList.add('carousel-item');
-  carouselItem.innerHTML = `
-    <img src="${item.url}" alt="${item.alt}">
-    <p class="tagline">${item.tagline}</p>
-  `;
-  carouselItemsContainer.appendChild(carouselItem);
+// Créer les dot indicators
+function createDots() {
+  for (let i = 0; i < data.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    // si besoin de style initial, ou écouteur de clic
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      updateSlide();
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
 
-  const indicator = document.createElement('div');
-  indicator.classList.add('indicator');
-  if (index === 0) indicator.classList.add('active');
-  indicatorsContainer.appendChild(indicator);
-
-  // Ajoute l'événement pour naviguer vers une image spécifique
-  indicator.addEventListener('click', () => {
-    currentIndex = index;
-    updateCarousel();
-  });
-});
-
-// Met à jour la position du carrousel
-function updateCarousel() {
-  const carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-  const offset = -currentIndex * carouselWidth;
-  carouselItemsContainer.style.transform = `translateX(${offset}px)`;
-
-  // Met à jour les indicateurs
-  document.querySelectorAll('.indicator').forEach((indicator, index) => {
-    indicator.classList.toggle('active', index === currentIndex);
+// Mettre à jour l'affichage
+function updateSlide() {
+  carouselImage.src = data[currentIndex].url;
+  carouselImage.alt = data[currentIndex].alt;
+  carouselTagline.textContent = data[currentIndex].tagline;
+  
+  // Gérer l'état actif des dots
+  const allDots = dotsContainer.querySelectorAll('.dot');
+  allDots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentIndex);
   });
 }
 
-// Ajoute les événements des boutons
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + data.length) % data.length;
-  updateCarousel();
-});
-
+// Navigation
 nextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % data.length;
-  updateCarousel();
+  updateSlide();
 });
 
-// Mise à jour initiale
-updateCarousel();
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + data.length) % data.length;
+  updateSlide();
+});
+
+// Initialisation
+createDots();
+updateSlide();

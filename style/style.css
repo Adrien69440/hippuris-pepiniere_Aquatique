@@ -27,12 +27,14 @@ display: flex;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
+	background-color:  #f0BAD8C2;
     border-bottom: 3px solid grey;
     padding: 0 20px;
 }
 .logo-nav{
-	background-color: #8d8d90;
+	/* background-color: #8d8d90; */
+	background-color: #3c4858;
 }
 .tabs_container {
     display: flex;
@@ -397,108 +399,91 @@ font-size: 1.5rem;
 /* style pour le carroussel index.html */
 /* Carrousel */
 
+/* 
+  CENTRAGE GLOBAL DE LA PAGE 
+  (si vous souhaitez que le carrousel soit au milieu de l'écran) 
+*/
 .carousel_position {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	justify-content: center; /* Centre horizontalement */
-	align-items: center;    /* Centre verticalement */
-	background-color: #f4f4f4; /* Arrière-plan pour bien voir le centrage */
-  }
-  
-  .carousel-container {
-	position: relative;
-	width: 800px;
-	overflow: hidden;
-	margin: auto;
-  }
-  
-  .carousel-items {
-	display: flex;
-	transition: transform 0.5s ease-in-out;
-  }
-  
-  .carousel-item {
-	min-width: 800px;
-	text-align: center;
-	
-		flex: 0 0 100%;
-		text-align: center;
-		background-color: #fff;
-		/* border: 1px solid #ddd; */
-		border-radius: 8px;
-		padding: 0;
-		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-	  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;                 /* Prend toute la hauteur de la fenêtre */
+  display: flex;
+  justify-content: center;       /* Centre horizontalement */
+  align-items: center;           /* Centre verticalement */
+  background-color: #f4f4f4;     /* Couleur de fond (optionnelle) */
 }
-  
-  .carousel-item img {
-	width: 100%;
-	border-radius: 8px;
-}
-  
-  .carousel-item .tagline {
-	font-size: 1.2em;
-	margin-top: 10px;
-  }
-  
-  .carousel-indicators {
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
-  }
-  
-  .indicator {
-	width: 15px;
-	height: 15px;
-	background: gray;
-	border-radius: 50%;
-	margin: 0 5px;
-	cursor: pointer;
-  }
-  
-  .indicator.active {
-	background: #007bff;
-  }
-  /* .carousel-indicator .indicator {
-	width: 10px;
-	height: 10px;
-	margin: 0 5px;
-	background-color: #ddd;
-	border-radius: 50%;
-	cursor: pointer;
-	transition: background-color 0.3s;
-  } */
 
-  button {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-  }
-  #prev-btn {
-	left: 10px;
-	background-color: #007bff;
-	cursor: pointer;
-	transform: translateY(-50%);
-	color: white;
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	z-index: 10;
+/* CONTENEUR DU CARROUSEL */
+.carousel-container {
+  position: relative;            /* Pour positionner les boutons en absolu */
+  width: 800px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;                 /* Un peu d'espace interne */
+  text-align: center;            /* Centre le contenu (img, p) */
+}
 
+/* L'IMAGE du carrousel */
+#carousel-image {
+  width: 100%;
+  border-radius: 8px;
 }
-  #next-btn {
-	right: 10px;
-	background-color: #007bff;
-	cursor: pointer;
-	transform: translateY(-50%);
-	color: white;
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	z-index: 10;
+
+/* LE TEXTE (tagline) */
+#carousel-tagline {
+  font-size: 1.2em;
+  margin: 10px 0;
 }
+
+/* BOUTONS PREV / NEXT */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+/* Bouton Précédent */
+#prev-btn {
+  left: 10px;
+}
+
+/* Bouton Suivant */
+#next-btn {
+  right: 10px;
+}
+
+/* CONTENEUR DES DOTS (indicateurs) */
+#dots-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* DOTS */
+.dot {
+  width: 15px;
+  height: 15px;
+  background: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* DOT ACTIF */
+.dot.active {
+  background: #007bff;
+}
+
   /* .carousel-btn {
 	position: absolute;
 	top: 50%;
@@ -511,5 +496,70 @@ font-size: 1.5rem;
 	z-index: 10;
   } */
 
+  /* Style page conseils */
+  
+ /* Style général du body */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+  }
+  
+  /* Container de cartes utilisant Grid */
+  .card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonnes responsives */
+	grid-gap: 80px; /* Espacement entre les cartes */
+	padding: 20px;
+	justify-items: center; /* Centrer les cartes horizontalement */
+  }
+  
+  /* Style de chaque carte */
+  .card {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de carte */
+	overflow: hidden;
+	text-decoration: none; /* Retirer la décoration des liens */
+	transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions pour l'effet de survol */
+	padding: 20px;
+	width: 100%;
+	max-width: 400px; /* Limiter la largeur des cartes */
+  }
+  
+  .card:hover {
+	transform: translateY(-10px); /* Déplacer légèrement la carte au survol */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  }
+  
+  /* Titre de la carte */
+  .card-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #333;
+	margin: 0 0 10px 0;
+  }
+  
+  /* Description sous le titre */
+  .card-description {
+	font-size: 1rem;
+	color: #666;
+  }
+  
+  /* Si tu veux ajouter une animation d'apparition pour les cartes */
+  /* .card-container {
+	opacity: 0;
+	animation: fadeIn 1s forwards;
+  } */
+  
+  /* Animation pour l'apparition de la grille */
+  /* @keyframes fadeIn {
+	to {
+	  opacity: 1;
+	}
+  } */
+  
+  /* fin */
   
 /*# sourceMappingURL=style.css.map */
